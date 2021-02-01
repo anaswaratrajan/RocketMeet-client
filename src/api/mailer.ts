@@ -10,7 +10,9 @@ class MailerAPI {
 
   URL: string | undefined;
 
-  domain: string | undefined;
+  mailer_domain: string | undefined;
+
+  origin_domain: string | undefined;
 
   version: string | undefined;
 
@@ -18,9 +20,10 @@ class MailerAPI {
     // this.senderID = "userIDfromStore"
     // this.token = "tokenfromStore"
 
-    this.domain = process.env.NEXT_PUBLIC_MAILER_URL;
+    this.origin_domain = process.env.NEXT_PUBLIC_ORIGIN_DOMAIN;
+    this.mailer_domain = process.env.NEXT_PUBLIC_MAILER_DOMAIN;
     this.version = process.env.NEXT_PUBLIC_VERSION_NUMBER;
-    this.URL = `${this.domain}/v${this.version}`;
+    this.URL = `${this.mailer_domain}/v${this.version}`;
   }
 
   httpPost = async (

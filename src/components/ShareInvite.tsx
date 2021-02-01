@@ -15,7 +15,7 @@ const ShareInvite = (props: {
 }): JSX.Element => {
   const { pollid } = props;
   const { polltitle } = props;
-  const pollurl = `${mailerAPI.domain}/poll/${pollid}`; /* This should be replaced */
+  const pollurl = `${mailerAPI.origin_domain}/poll/${pollid}`; /* This should be replaced */
 
   const handleCopy = (): void => {
     copy(pollurl);
@@ -26,7 +26,7 @@ const ShareInvite = (props: {
       <Popover.Content>Copied!</Popover.Content>
     </Popover>
   );
-  
+
   return (
     <div>
       <Form
